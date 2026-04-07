@@ -1,5 +1,8 @@
 <?php
 $numero = 7;
+if (isset($_GET["numero"])) {
+    $numero = $_GET["numero"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="ca">
@@ -10,6 +13,11 @@ $numero = 7;
 <body>
 
 <h1>Taula del <?php echo $numero; ?></h1>
+<form action="index.php" method="get">
+    <label>Escriu un número:</label>
+    <input type="number" name="numero">
+    <button type="submit">Mostrar taula</button>
+</form>
 
 <?php
 if ($numero < 1 || $numero > 12) {
